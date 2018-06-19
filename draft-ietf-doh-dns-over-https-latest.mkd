@@ -520,6 +520,44 @@ Author:  Paul Hoffman, paul.hoffman@icann.org
 Change controller:  IESG
 ~~~~~
 
+Privacy Considerations
+----------------------------
+
+When considering how the use of DoH affects user privacy (for example, compared with DNS over UDP, TCP or TLS) it is helpful to follow the analysis in both RFC7626 (DNS Privacy Considerations) and RFC6973 (Privacy Considerations for Internet Protocols). 
+
+With reference to Section 2.4 of RFC7626 “On the wire”:
+
+The privacy expectations of a user of DoH are relatively straightforward:
+
++ DoH encrypts DNS traffic and requires authentication of the server. This clearly mitigates passive surveillance and active attacks attempting to divert DNS traffic to rogue servers.
++ The use of port 443 by default and the ability to intermingle DNS traffic with HTTP traffic on the same connection can preventing on-path devices from interfering with DNS operations and make DNS traffic analysis more difficult.
+
+With reference to Section 2.5 of RFC7626 “In the Servers”:
+
+HTTP and DNS are very different protocols. There exists a natural tension between 
+* the wide practice in HTTP to use various headers to optimise HTTP connections, functionality and behaviour (which can facilitate user identification and tracking)
+* and the fact that currently DNS is very tightly encoded and contains no standardized user identifiers (since they are acknowledged as compromising user privacy). 
+
+DNS-over-TLS, for example, would normally contain no client identifiers in the DNS messages and a resolver would see only a stream of DNS queries originating from a client IP address. Whereas if DoH clients commonly include several headers in a DNS message (e.g. user-agent and accept-language) this could lead to the resolver being able to identify the source of individual DNS requests not only to a specific end user device but to a specific application. 
+
+Additionally, depending on the client architecture, isolation of DNS queries from other HTTP traffic may or may not be feasible or desirable.  Depending on the use case, isolation of DNS queries from other HTTP traffic may or may not increase privacy. 
+
+The picture for privacy considerations and user expectations here is complex and will require a more detailed analysis for each particular use case. At the extremes, there may be use cases that attempt to achieve parity with DNS-over-TLS from a privacy perspective at the cost of using no identifiable headers, there might be others that provide feature rich data flows where the low-level origin of the DNS query is easily identifiable. 
+
+As guidance, implementors should consider the following:
+
+1.  RFC6973 discusses data minimisation in detail and says:
+
+“Data minimization mitigates the following threats: surveillance, stored data compromise, correlation, identification, secondary use, and disclosure."
+
+2. Implementors should evaluate what identifiers could be omitted or be made less identifying while still fulfilling the protocol's goals. 
+
+  a. Specifically, implementors SHOULD not use non-essential HTTP headers in DoH messages and SHOULD set the user agent string to ‘DoH client’.
+
+  b. Implementations SHOULD only accept cookies or allow client authentication when it is required to fulfil the protocols goals (e.g. a subscription service with user opt-in).
+
+
+
 # Security Considerations {#Security}
 
 Running DNS over HTTPS relies on the security of the underlying
