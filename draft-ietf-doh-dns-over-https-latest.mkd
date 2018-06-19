@@ -549,7 +549,7 @@ functionality and behaviour (which can facilitate user identification and tracki
 * and the fact that currently DNS is very tightly encoded and contains no standardized 
 user identifiers (since they are acknowledged as compromising user privacy). 
 
-DNS-over-TLS, for example, would normally contain no client identifiers in the DNS 
+DNS-over-TLS {{RFC7858}}, for example, would normally contain no client identifiers in the DNS 
 messages and a resolver would see only a stream of DNS queries originating from a client IP 
 address. Whereas if DoH clients commonly include several headers in a DNS message 
 (e.g. user-agent and accept-language) this could lead to the resolver being able to identify 
