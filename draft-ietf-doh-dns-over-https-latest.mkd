@@ -534,7 +534,7 @@ With reference to Section 2.4 of {{RFC7626}} “On the wire”:
 
 The privacy expectations of a user of DoH are relatively straightforward:
 
-+ DoH encrypts DNS traffic and requires authentication of the server. 
++ DoH encrypts stub-to-recursive DNS traffic and requires authentication of the server. 
 This clearly mitigates passive surveillance and active attacks attempting 
 to divert DNS traffic to rogue servers.
 + The use of port 443 by default and the ability to intermingle DNS traffic 
