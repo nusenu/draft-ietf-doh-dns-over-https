@@ -42,6 +42,7 @@ normative:
   RFC7235:
   RFC7540:
   RFC7541:
+  RFC7858:
   RFC8174:
 
 informative:
@@ -525,7 +526,7 @@ Change controller:  IESG
 # Privacy Considerations {#Privacy}
 
 When considering how the use of DoH affects user privacy (for example, 
-compared with DNS over UDP, TCP or TLS) it is helpful to follow the analysis 
+compared with DNS over UDP, TCP or TLS {{RFC7858}}) it is helpful to follow the analysis 
 in both RFC7626 (DNS Privacy Considerations) and {{RFC6973}} 
 (Privacy Considerations for Internet Protocols). 
 
