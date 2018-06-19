@@ -552,7 +552,7 @@ user identifiers (since they are acknowledged as compromising user privacy).
 DNS-over-TLS {{RFC7858}}, for example, would normally contain no client identifiers in the DNS 
 messages and a resolver would see only a stream of DNS queries originating from a client IP 
 address. Whereas if DoH clients commonly include several headers in a DNS message 
-(e.g. user-agent and accept-language) this could lead to the resolver being able to identify 
+(e.g. user-agent and accept-language) this could lead to the DoH server being able to identify 
 the source of individual DNS requests not only to a specific end user device but to a specific application. 
 
 Additionally, depending on the client architecture, isolation of DNS queries from other HTTP
