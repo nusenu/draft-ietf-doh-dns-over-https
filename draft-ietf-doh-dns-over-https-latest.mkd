@@ -576,8 +576,9 @@ low-level origin of the DNS query is easily identifiable.
 
 As guidance, implementors should consider the following:
 
-1. Implementors should evaluate what identifiers could be omitted or be made
-less identifying while still fulfilling the protocol's goals.
+1. Implementors should evaluate if any DoH client identifiers are needed or what 
+identifiers could be omitted or be made less identifying while still fulfilling 
+the protocol's goals.
 
    * Specifically, implementors SHOULD NOT use non-essential HTTP headers in DoH
      messages and SHOULD set the user agent string to ‘DoH client’.
