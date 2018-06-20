@@ -580,9 +580,9 @@ As guidance, implementors should consider the following:
 identifiers could be omitted or be made less identifying while still fulfilling 
 the protocol's goals.
 
-   * Specifically, implementors SHOULD set the user agent string to ‘DoH client’.
-   
    * Implementors SHOULD NOT set non-essential HTTP headers in DoH client requests.
+   
+   * If the HTTP user agent header can not be omitted, it SHOULD be set to ‘DoH client’.
      
    * Implementations SHOULD only accept cookies or allow client authentication
      when it is required to fulfil the protocols goals (e.g. a subscription
