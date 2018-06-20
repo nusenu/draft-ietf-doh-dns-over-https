@@ -574,7 +574,7 @@ correlation, identification, secondary use, and disclosure."
 2. Implementors should evaluate what identifiers could be omitted or be made less identifying 
 while still fulfilling the protocol's goals. 
 
-    a. Specifically, implementors SHOULD not use non-essential HTTP headers in DoH messages and SHOULD set the user agent string to ‘DoH client’.
+    a. Specifically, implementors SHOULD NOT use non-essential HTTP headers in DoH messages and SHOULD set the user agent string to ‘DoH client’.
 
     b. Implementations SHOULD only accept cookies or allow client authentication when it is required to fulfil the protocols goals (e.g. a subscription service with user opt-in).
 
