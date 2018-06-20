@@ -576,11 +576,7 @@ low-level origin of the DNS query is easily identifiable.
 
 As guidance, implementors should consider the following:
 
-1. {{RFC6973}} discusses data minimisation in detail and says: “Data
-minimization mitigates the following threats: surveillance, stored data
-compromise, correlation, identification, secondary use, and disclosure."
-
-2. Implementors should evaluate what identifiers could be omitted or be made
+1. Implementors should evaluate what identifiers could be omitted or be made
 less identifying while still fulfilling the protocol's goals.
 
    * Specifically, implementors SHOULD NOT use non-essential HTTP headers in DoH
@@ -589,6 +585,10 @@ less identifying while still fulfilling the protocol's goals.
    * Implementations SHOULD only accept cookies or allow client authentication
      when it is required to fulfil the protocols goals (e.g. a subscription
      service with user opt-in).
+     
+2. {{RFC6973}} discusses data minimisation in detail and says: “Data
+minimization mitigates the following threats: surveillance, stored data
+compromise, correlation, identification, secondary use, and disclosure."
 
 # Security Considerations {#Security}
 
