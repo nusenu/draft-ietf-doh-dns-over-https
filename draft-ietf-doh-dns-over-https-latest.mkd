@@ -582,11 +582,12 @@ the protocol's goals.
 
    * Implementors SHOULD NOT set non-essential HTTP headers in DoH client requests.
    
-   * If the HTTP user agent header can not be omitted, it SHOULD be set to ‘DoH client’.
+   * If the HTTP user agent header can not be omitted in DoH client requests, it
+     SHOULD be set to ‘DoH client’.
      
-   * Implementations SHOULD only accept cookies or allow client authentication
-     when it is required to fulfil the protocols goals (e.g. a subscription
-     service with user opt-in).
+   * DoH client implementations SHOULD NOT accept HTTP cookies unless they are 
+     required to fulfil the use case (e.g. a DoH server requiring authentication for
+     a subscription service with user opt-in).
      
 2. {{RFC6973}} discusses data minimisation in detail and says: “Data
 minimization mitigates the following threats: surveillance, stored data
